@@ -10,17 +10,17 @@
     <env-entry>
     <env-entry-name>auth0.domain</env-entry-name>
     <env-entry-type>java.lang.String</env-entry-type>
-    <env-entry-value>dev-mr9ki84b.auth0.com</env-entry-value>
+    <env-entry-value>HIDDEN, DO NOT WANT TO MAKE THIS PUBLIC - SETUP ON AUTH0 WEBSITE</env-entry-value>
     </env-entry>
     <env-entry>
         <env-entry-name>auth0.clientId</env-entry-name>
         <env-entry-type>java.lang.String</env-entry-type>
-        <env-entry-value>QRer7FTL3MvXwPep7WXxPyphoDvKoa5X</env-entry-value>
+        <env-entry-value>HIDDEN, DO NOT WANT TO MAKE THIS PUBLIC - SETUP ON AUTH0 WEBSITE</env-entry-value>
     </env-entry>
     <env-entry>
         <env-entry-name>auth0.clientSecret</env-entry-name>
         <env-entry-type>java.lang.String</env-entry-type>
-        <env-entry-value>hu-OVNbdBoevyHOjBgbjQFNhAzWo59IQi0YEUdxWE2pRNKsXvRtNVS_k5P2QAPwE</env-entry-value>
+        <env-entry-value>HIDDEN, DO NOT WANT TO MAKE THIS PUBLIC - SETUP ON AUTH0 WEBSITE</env-entry-value>
     </env-entry>
     <env-entry>
         <env-entry-name>auth0.scope</env-entry-name>
