@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+              
+    <h:body>
+
+        <ui:include src="templates/default/template.xhtml" />
+        
+        <h1>
+            <i class="fa fa-home"></i> 
+            Welcome to ManageBugsFree #{userController.userName}! 
+        </h1>
+        
+        <p class="homepage"><strong>ManageBugsFree</strong> is a bug tracking application. There are two 
+                    distinct roles available for users; "Software Developer" and 
+                    "Customer Support Representative." Each role comes with a few distinct views and permissions. 
+        </p>
+        
+        <p class="homepage"><strong>Customer Support Representatives (CSRs)</strong> can submit 
+                    <strong>Local Bug Tracker reports (LBTs)</strong> when they encounter or are informed of 
+                    a software issue. <strong>Software Developers</strong> can then review Unlinked LBT reports
+                    and then open <strong>Bug reports (BRs)</strong> to resolve the reported issue. The CSR or 
+                    Software Developer can then link the LBT report to the Bug report, which allows 
+                    both parties to better track the origin and resolution of the issue.
+        </p>
+        
+    </h:body>
+    
+</html>

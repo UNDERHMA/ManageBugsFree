@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+              
+    <h:body>
+
+        <ui:include src="templates/default/template.xhtml" />
+        
+        <h1>
+            <i class="fa fa-bolt"></i> 
+            My Bug Reports 
+        </h1>
+        
+        <h:form id="searchform" class="navbar-form navbar-center">
+            <p:panel id="panel" header="Search Form">
+            
+                        <h:outputLabel for="bugreportid" value="BugReportID: "/>
+                         &nbsp;
+                        <h:inputText id ="bugreportid"
+                                     value="#{bugReportListController.searchFunction.bugReportId}"
+                                     class="form-control focus formitem-bugsapp"
+                                     maxlength="10"
+                                     />
+                         &nbsp;
+                        <h:outputLabel for="title" value="Title: "/>
+                         &nbsp;
+                        <h:inputText id ="title"
+                                     value="#{bugReportListController.searchFunction.title}"
+                                     class="form-control focus formitem-bugsapp"
+                                     maxlength="100"
+                                     />
+                        &nbsp;
+                        <h:outputLabel for="topic" value="Topic: "/>
+                         &nbsp;
+                        <h:selectOneMenu id ="topic"
+                                     value="#{bugReportListController.searchFunction.topic}"
+                                     class="form-control focus formitem-bugsapp">
+                            <f:selectItems  value="#{bugReportListController.topics}"/>
+                        </h:selectOneMenu>
+                        &nbsp;
+                        <h:outputLabel for="status" value="Status:"/>
+                         &nbsp;
+                        <h:selectOneMenu id ="status"
+                                     value="#{bugReportListController.searchFunction.status}"
+                                     class="form-control focus formitem-bugsapp"
+                                     style="width: 226px">
+                            <f:selectItems  value="#{bugReportListController.statuses}"/>
+                        </h:selectOneMenu>
+                         <br></br>
+                        <h:outputLabel for="lbtreportid" value="Linked LBT Report ID: "/>
+                         &nbsp;
+                        <h:inputText id ="lbtreportids"
+                                     value="#{bugReportListController.searchFunction.lbtReportId}"
+                                     class="form-control focus formitem-bugsapp"
+                                     maxlength="10"
+                                     />
+                        &nbsp;
+                         <h:outputLabel for="similarbrid" value="Similar BR ID:"/>
+                        &nbsp;
+                        <h:inputText id ="similarbrid"
+                                     value="#{bugReportListController.searchFunction.similarBugReportId}"
+                                     class="form-control focus formitem-bugsapp"
+                                     maxlength="10"
+                                     />
+                        &nbsp;
+                        <h:outputLabel for="priority" value="Priority:"/>
+                         &nbsp;
+                        <h:selectOneMenu id ="priority"
+                                     value="#{bugReportListController.searchFunction.priority}"
+                                     class="form-control focus formitem-bugsapp">
+                            <f:selectItems  value="#{bugReportListController.priorities}"/>
+                        </h:selectOneMenu>
+                         &nbsp;
+                        <h:outputLabel for="softwareversion" value="Software Version:"/>
+                        &nbsp;
+                        <h:selectOneMenu id ="softwareversion"
+                                     value="#{bugReportListController.searchFunction.softwareVersion}"
+                                     class="form-control focus formitem-bugsapp">
+                            <f:selectItems  value="#{bugReportListController.softwareVersions}"/>
+                        </h:selectOneMenu>
+                        &nbsp;
+                        <h:outputLabel for="openedby" value="Opened By:"/>
+                        &nbsp;
+                        <h:selectOneMenu id ="openedby"
+                                     value="#{bugReportListController.searchFunction.openedBy}"
+                                     class="form-control focus formitem-bugsapp">
+                            <f:selectItems  value="#{bugReportListController.users2}"/>
+                        </h:selectOneMenu>
+                        <br></br>
+                        <h:outputLabel value="Open Date Between: "/>
+                         &nbsp;
+                        <p:calendar id ="startdate"
+                                    value="#{bugReportListController.searchFunction.startDate}"
+                                    class ="ui-inputfield"
+                                     />
+                        &nbsp; 
+                        <h:outputLabel value="&amp;"/>
+                        &nbsp;
+                        <p:calendar id ="enddate"
+                                     value="#{bugReportListController.searchFunction.endDate}"
+                                     class ="ui-inputfield"
+                                    />
+                         &nbsp;
+                        <h:outputLabel value="Initial Close Date Between: "/>
+                         &nbsp;
+                        <p:calendar id ="startdateclosed"
+                                    value="#{bugReportListController.searchFunction.startDateClosed}"
+                                    class ="ui-inputfield"
+                                     />
+                        &nbsp; 
+                        <h:outputLabel value="&amp;"/>
+                        &nbsp;
+                        <p:calendar id ="enddateclosed"
+                                     value="#{bugReportListController.searchFunction.endDateClosed}"
+                                     class ="ui-inputfield"
+                                    />
+                        <br></br>
+                        <h:outputLabel for="userassigned" value="User Assigned:"/>
+                        &nbsp;
+                        <h:selectOneMenu id ="userassigned"
+                                     value="#{bugReportListController.searchFunction.userAssigned}"
+                                     class="form-control focus formitem-bugsapp">
+                            <f:selectItems  value="#{bugReportListController.users}"/>
+                        </h:selectOneMenu>
+                        &nbsp;
+                        <h:outputLabel for="team" value="Development Team:"/>
+                        &nbsp;
+                        <h:selectOneMenu id ="team"
+                                     value="#{bugReportListController.searchFunction.developmentTeam}"
+                                     class="form-control focus formitem-bugsapp">
+                            <f:selectItems  value="#{bugReportListController.teams}"/>
+                        </h:selectOneMenu>
+                        &nbsp;
+                        <h:outputLabel for="abbreviatedstacktrace" value="Stack Trace Text:"/>
+                        &nbsp;
+                        <h:inputText id ="abbreviatedstacktrace"
+                                     value="#{bugReportListController.searchFunction.abbreviatedStackTrace}"
+                                     class="form-control focus formitem-bugsapp"
+                                     maxlength="150"
+                                     />
+                        &nbsp;
+                        <h:outputLabel for="bugdescription" value="BR Description Text:"/>
+                        &nbsp;
+                        <h:inputText id ="bugdescription"
+                                     value="#{bugReportListController.searchFunction.bugDescription}"
+                                     class="form-control focus formitem-bugsapp"
+                                     maxlength="150"
+                                     />
+                        <br></br>
+                        <p:commandButton value="Search"
+                                 action="#{bugReportListController.search}"
+                                 update=":table"
+                        />
+            </p:panel>
+        </h:form>
+        <br></br>
+        <!--Drawn from Primefaces example https://www.primefaces.org/showcase/ui/data/datatable/lazy.xhtml-->
+        <!--MIT License contained in this package folder src/main/webapp folder-->
+        <p:dataTable id="table" var="dataItem" value="#{bugReportListController.bugReportModel}" 
+                     paginator = "true" rows="25" paginatorTemplate = "{FirstPageLink} 
+                     {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}" lazy="true">
+            <p:column headerText="Bug Report ID" sortBy="#{dataItem.bugReportId}">
+                <h:outputLink class="tablelinks" value = "BugReport.xhtml" >
+                    #{dataItem.bugReportId}
+                    <f:param name="bugReportId" value="#{dataItem.bugReportId}" />
+                </h:outputLink> 
+            </p:column>
+            <p:column headerText="Title" sortBy="#{dataItem.title}" style="width:150px;">
+                <h:outputText value="#{dataItem.title}" />
+            </p:column>
+            <p:column headerText="Topic" sortBy="#{dataItem.topic}">
+                <h:outputText value="#{dataItem.topic}" />
+            </p:column>
+            <p:column headerText="Status" sortBy="#{dataItem.status}">
+                <h:outputText value="#{dataItem.status}" />
+            </p:column>
+            <p:column headerText="Linked LBT Report ID"  style="width:60px;">
+                <ul class="tablelinks">
+                    <ui:repeat value="#{dataItem.linkedLbtReportIds}" var="linkedlbtreportslist">
+                        <li>
+                            <h:outputLink class="tablelinks" value = "LBTReport.xhtml" >
+                                #{linkedlbtreportslist.lbtReport.lbtReportId}
+                                <f:param name="lbtReportId" value="#{linkedlbtreportslist.lbtReport.lbtReportId}" />
+                             </h:outputLink>
+                        </li>
+                    </ui:repeat>
+                </ul>
+            </p:column>
+            <p:column headerText="Similar BR ID"  style="width:60px;">
+                <ul class="tablelinks">
+                    <ui:repeat value="#{dataItem.similarBugReportIds}" var="similiarbugreports">
+                            <li>
+                                <h:outputLink class="tablelinks" value = "BugReport.xhtml" >
+                                    #{similiarbugreports.similarBugReportId}
+                                    <f:param name="bugReportId" value="#{similiarbugreports.similarBugReportId}" />
+                                </h:outputLink>
+                            </li>
+                    </ui:repeat>
+                </ul>
+            </p:column>
+            <p:column headerText="Priority" sortBy="#{dataItem.priority}">
+                <h:outputText value="#{dataItem.priority}" />
+            </p:column>
+            <p:column headerText="Version" sortBy="#{dataItem.softwareVersion}">
+                <h:outputText value="#{dataItem.softwareVersion}" />
+            </p:column>
+            <p:column headerText="Opened By" sortBy="#{dataItem.openedBy}">
+                <h:outputText value="#{dataItem.openedBy}" />
+            </p:column>
+            <p:column headerText="Date Opened" sortBy="#{dataItem.dateCreated}">
+                <h:outputText value="#{dataItem.dateCreated}" />
+            </p:column>
+            <p:column headerText="Date 1st Closed" sortBy="#{dataItem.dateFirstClosed}">
+                <h:outputText value="#{dataItem.dateFirstClosed}" />
+            </p:column>
+            <p:column headerText="User Assigned" sortBy="#{dataItem.userAssigned}">
+                <h:outputText value="#{dataItem.userAssigned}" />
+            </p:column>
+            <p:column headerText="Development Team" sortBy="#{dataItem.teamName}">
+                <h:outputText value="#{dataItem.teamName}" />
+            </p:column>
+        </p:dataTable>
+    </h:body>
+    
+</html>

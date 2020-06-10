@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+              
+    <h:body>
+    
+        <ui:include src="templates/default/template.xhtml" />
+        
+        <h1>
+            <i class="fa fa-ticket"></i> 
+            New LBT Report 
+        </h1>
+        
+        <h:form id="newbrform" class="navbar-form navbar-center">
+            <p:panel id="panel" header="New Bug Report">
+                    <p:messages autoUpdate="true" for="title" style="color:red"/>
+                    <h:outputLabel class="titlemargin" value="*Title (100 char.): "/>
+                    &nbsp;
+                    <h:inputText id ="title"
+                                value="#{newLBTReportController.lbtReport.title}"
+                                class="form-control focus formitem-bugsapp"
+                                maxlength="100"
+                                style="width: 250px;"
+                                required="true"
+                                requiredMessage="Title is required"/>
+                    <h:message id="m1" for="title" style="color:red"/>
+                    &nbsp;
+                    <h:outputLabel for="topic" value="Topic: "/>
+                    &nbsp;
+                    <h:selectOneMenu id ="topic"
+                                value="#{newLBTReportController.lbtReport.topic}"
+                                class="form-control focus formitem-bugsapp"
+                                style="width: 150px;">
+                        <f:selectItems  value="#{newLBTReportController.topics}"/>
+                    </h:selectOneMenu>
+                    <hr></hr>
+                    <h:outputLabel value="Recommended Development Team: "/>
+                    &nbsp;    
+                    <h:selectOneMenu value="#{newLBTReportController.lbtReport.developmentTeam}">
+                        <f:selectItems value="#{newLBTReportController.developmentTeams}"/>
+                    </h:selectOneMenu>
+                    <br></br>
+                    <h:outputLabel value="Support Severity Estimate: "/>
+                    &nbsp;
+                    <h:selectOneMenu value="#{newLBTReportController.lbtReport.severityEstimate}">
+                        <f:selectItems value="#{newLBTReportController.priorities}"/>
+                    </h:selectOneMenu>
+                    &nbsp;
+                    <h:outputLabel value="Software Version: "/>
+                    &nbsp;
+                    <h:selectOneMenu value="#{newLBTReportController.lbtReport.softwareVersion}">
+                        <f:selectItems value = "#{newLBTReportController.softwareVersions}"/>
+                    </h:selectOneMenu>
+                    <hr></hr>
+                    <p:messages autoUpdate="true" for="similarbrid" style="color:red"/>
+                    <h:outputLabel value="Similar to Bug Report ID: "/>
+                    &nbsp;
+                    <h:inputText id="similarbrid" 
+                                value="#{newLBTReportController.jsfSimilarBugReportId}"
+                                class="form-control focus formitem-bugsapp"
+                                maxlength="10" size="10"
+                                validator="#{newLBTReportController.validateSimilarBRId}"/>
+                    <hr></hr>
+                    <p:messages autoUpdate="true" for="linkedbugreportid" style="color:red"/>
+                    <h:outputLabel value="Linked Bug Report ID: "/>
+                    &nbsp;
+                    <h:inputText id="linkedbugreportid"
+                                value="#{newLBTReportController.jsfLinkedBugReportId}"
+                                class="form-control focus formitem-bugsapp"
+                                maxlength="10" size="10"
+                                validator="#{newLBTReportController.validateLinkedBRId}"/>
+                    <hr></hr>
+                    <p:messages autoUpdate="true" for="abbreviatedStackTrace" style="color:red"/>
+                    <h:outputLabel for= "abbreviatedStackTrace" value="*Abbreviated Stack Trace (3000 char.): "/> <br></br>
+                    &nbsp;
+                    <h:inputTextarea id="abbreviatedStackTrace" rows="6" cols="140" required="true"
+                                    requiredMessage="abbreviatedStackTrace is required"
+                                    value="#{newLBTReportController.lbtReport.abbreviatedStackTrace}">
+                        <f:validateLength maximum="3000" />
+                    </h:inputTextarea>
+                    <hr></hr>
+                    <h:outputLabel for="bugDescription" value="*Description of Problem (3000 char.): "/> <br></br>
+                    <h:inputTextarea id="bugDescription" rows="6" cols="140" required="true"
+                                     requiredMessage="bugDescription is required"
+                                     value="#{newLBTReportController.lbtReport.bugDescription}"
+                                     validator="#{newLBTReportController.validatePermissions}" >
+                        <f:validateLength maximum="3000" />
+                    </h:inputTextarea>
+                    <p:messages autoUpdate="true" for="bugDescription" style="color:red"/>
+                    <hr></hr>
+                    <p:commandButton value="Submit"
+                                    action="#{newLBTReportController.addLBTReport}" >
+                        <f:param name="lbtReportId" value="#{newLBTReportController.lbtReport.lbtReportId}" />
+                    </p:commandButton>
+            </p:panel>
+        </h:form>
+                
+    </h:body>
+</html>

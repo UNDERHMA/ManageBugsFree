@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+              
+    <h:body>
+
+        <ui:include src="templates/default/template.xhtml" />
+        
+        <h1> 
+            <i class="fa fa-gear"></i> 
+            Settings 
+        </h1>
+        
+        <h:form id="settings" class="form-bugsapp form-horizontal">
+            <p:panel style="border-width:0px">   
+                <h:outputLabel value="User Role: "/>
+                &nbsp;
+                <h:outputLabel value=" #{userSettingsController.role}" style="font-weight: normal;"/>
+                <br></br>
+                <h:outputLabel for="team" value="Team:"/>
+                &nbsp;
+                <h:selectOneMenu id ="team"
+                                value="#{userSettingsController.teamName}"
+                                class="form-control focus formitem-bugsapp"
+                                style="width: 260px">
+                    <f:selectItems  value="#{userSettingsController.teams}"/>
+                </h:selectOneMenu>
+                <br></br>
+                <p:commandButton value="Save"
+                                        action="#{userSettingsController.save}">
+                </p:commandButton>
+                <br></br><br></br>
+                <h:outputLabel style="color:blue" value="#{userSettingsController.updated} "/>
+            </p:panel>
+        </h:form>
+        
+    </h:body>
+    
+</html>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+              
+    <h:body style="padding-bottom: 100px">
+
+        <ui:include src="templates/default/template.xhtml" />
+        <br></br>
+        <h1>
+            <i class="fa fa-file-text"></i> 
+            LBT Report #{lBTReportController.lbtReportId} #{lBTReportController.justCreated}  </h1>
+        <h:outputLabel style="color:blue; margin-left: 40px;" value="#{lBTReportController.updated} "/>
+        <h4> LBT Report Details:  </h4>
+        <h:form id="lbtreportdetails" class="navbar-form navbar-center" style="padding-bottom: 30px">
+            <p:panel id="panel" header="">
+                    <h:outputLabel style="color:black;font-size:12px;font-weight:bold;background-color:#00FFFF"  
+                                   value="ALL LINKED BUG REPORTS CLOSED/FIX DEPLOYED ON: #{lBTReportController.lbtReport.dateAllLinkedBRsClosed}" 
+                                   rendered="#{lBTReportController.isStatusClosed()}"
+                                   />
+                    <br></br>
+                    <h:outputLabel class="titlemargin" value="Title: "/>
+                    &nbsp;
+                    <h:outputLabel  id ="title" class="titlemargin"
+                                value="#{lBTReportController.lbtReport.title}"
+                                style="font-weight:normal;"/>
+                     <br></br>
+                    <h:outputLabel value="Submitted By: "/>
+                    &nbsp;
+                    <h:outputLabel  id ="submittedby" 
+                                value="#{lBTReportController.lbtReport.userSubmitted}"
+                                style="font-weight:normal;"/>
+                    <br></br>
+                    <h:outputLabel value="User Assigned: "/>
+                    &nbsp;
+                    <h:selectOneMenu value="#{lBTReportController.lbtReport.userAssigned}">
+                        <f:selectItems value="#{lBTReportController.users}"/>
+                    </h:selectOneMenu>
+                    <br></br>
+                    <h:outputLabel value="Team Assigned: "/>
+                    &nbsp;
+                    <h:selectOneMenu value="#{lBTReportController.lbtReport.customerSupportTeam}">
+                        <f:selectItems value="#{lBTReportController.customerSupportTeams}"/>
+                    </h:selectOneMenu>
+                    <br></br>
+                    <h:outputLabel value="Recommended Development Team: "/>
+                    &nbsp;
+                    <h:selectOneMenu value="#{lBTReportController.lbtReport.developmentTeam}">
+                        <f:selectItems value="#{lBTReportController.developmentTeams}"/>
+                    </h:selectOneMenu>
+                    <br></br>
+                    <h:outputLabel value="Priority: "/>
+                    &nbsp;
+                    <h:selectOneMenu value="#{lBTReportController.lbtReport.severityEstimate}">
+                        <f:selectItems value="#{lBTReportController.priorities}"/>
+                    </h:selectOneMenu>
+                    &nbsp;
+                    <h:outputLabel value="Software Version: "/>
+                    &nbsp;
+                    <h:selectOneMenu value="#{lBTReportController.lbtReport.softwareVersion}">
+                        <f:selectItems value = "#{lBTReportController.softwareVersions}"/>
+                    </h:selectOneMenu>
+                    &nbsp;
+                    <h:outputLabel value="Topic: "/>
+                    &nbsp;
+                    <h:selectOneMenu value="#{lBTReportController.lbtReport.topic}">
+                        <f:selectItems value = "#{lBTReportController.topics}"/>
+                    </h:selectOneMenu>
+                    <hr></hr>
+                    <h:outputLabel for= "abbreviatedStackTrace" value="Abbreviated Stack Trace (3000 char.): "/> <br></br>
+                    &nbsp;
+                    <h:outputLabel id="abbreviatedStackTrace" 
+                                   value="#{lBTReportController.lbtReport.abbreviatedStackTrace}"
+                                   style="font-weight:normal;"/>
+                    <hr></hr>
+                    <h:outputLabel for="bugDescription" value="Description of Problem (3000 char.): "/> <br></br>
+                    &nbsp;
+                    <h:outputLabel id="bugDescription"
+                                     value="#{lBTReportController.lbtReport.bugDescription}"
+                                     style="font-weight:normal;"/>
+                    <hr></hr> 
+                    <p:dataTable id="similarbugreportstable" class="smalltable"
+                                 value="#{lBTReportController.lbtReport.similarBugReportIds}" 
+                                 var="dataItem" selection="#{lBTReportController.similarSelectedValues}"
+                                 rowKey="#{dataItem.similarBugReportId}">
+                        <p:column>
+                            <f:facet id="similarbugreportid" name="header" class="thead-sitetables">
+                                <h:outputText value="Simlar Bug Report IDs: "  />
+                            </f:facet>
+                            <ul class="tablelinks">
+                                <ui:repeat value="#{dataItem.similarBugReportId}" var="similarbugreportiditem">
+                                    <li>
+                                        <h:outputLink class="tablelinks" value = "BugReport.xhtml" >
+                                            #{similarbugreportiditem}
+                                            <f:param name="bugReportId" value="#{similarbugreportiditem}" />
+                                         </h:outputLink>
+                                    </li>
+                                </ui:repeat>
+                            </ul>
+                        </p:column>
+                        <p:column selectionMode="multiple" style="width:60px;">
+                            <f:facet id="selection1" name="header" class="thead-sitetables">
+                                <h:outputText value="Delete: "  />
+                            </f:facet>
+                        </p:column>
+                    </p:dataTable>
+                    <p:messages autoUpdate="true" for="similarbrid" style="color:red"/>
+                    <h:outputLabel for="similarbrid" value="Add New Similar BR ID:"/>
+                        &nbsp;
+                    <h:inputText id ="similarbrid"
+                                     value="#{lBTReportController.jsfSimilarBugReport}"
+                                     class="form-control focus formitem-bugsapp"
+                                     maxlength="10"
+                                     validator="#{lBTReportController.validateSimilarBRId}"
+                                     />
+                    <hr></hr>
+                    <p:dataTable id="linkedbugreportstable" class="smalltable"
+                                 value="#{lBTReportController.lbtReport.linkedBugReportIds}" 
+                                 var="dataItem" selection="#{lBTReportController.linkedSelectedValues}"
+                                 rowKey="#{dataItem.bugReport.bugReportId}">
+                        <p:column>
+                            <f:facet id="linkedbugreportid" name="header" class="thead-sitetables">
+                                <h:outputText value="Linked Bug Report IDs: "  />
+                            </f:facet>
+                            <ul class="tablelinks">
+                                <ui:repeat value="#{dataItem.bugReport}" var="bugreportiditem">
+                                    <li>
+                                        <h:outputLink class="tablelinks" value = "BugReport.xhtml" >
+                                           #{bugreportiditem.bugReportId}
+                                            <f:param name="bugReportId" value="#{bugreportiditem.bugReportId}" />
+                                         </h:outputLink>
+                                    </li>
+                                </ui:repeat>
+                            </ul>
+                        </p:column>
+                        <p:column selectionMode="multiple" style="width:60px;">
+                            <f:facet id="selection2" name="header" class="thead-sitetables">
+                                <h:outputText value="Delete: "  />
+                            </f:facet>
+                        </p:column>
+                    </p:dataTable>
+                    <p:messages autoUpdate="true" for="linkedbrid" style="color:red"/>
+                    <h:outputLabel for="linkedbrid" value="Add New Linked BR ID:"/>
+                        &nbsp;
+                    <h:inputText id ="linkedbrid"
+                                     value="#{lBTReportController.jsfLinkedBugReport}"
+                                     class="form-control focus formitem-bugsapp"
+                                     maxlength="10"
+                                     validator="#{lBTReportController.validateLinkedBRId}"
+                                     />
+                    <hr></hr>
+                    <p:dataTable id="notestable" value="#{lBTReportController.notesList}" var="dataItem">
+                        <p:column style="width:180px;">
+                            <f:facet id="entrydate" name="header" class="thead-sitetables">
+                                <h:outputText value="Entry Date: "  />
+                            </f:facet>
+                            <h:outputText value="#{dataItem.entryDate}" />
+                        </p:column>
+                        <p:column style="width:120px;">
+                            <f:facet id="entered by" name="header" class="thead-sitetables">
+                                <h:outputText value="Entered By: "  />
+                            </f:facet>
+                            <h:outputText value="#{dataItem.enteredByUserId.userName}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet id="note" name="header" class="thead-sitetables">
+                                <h:outputText value="Note: "  />
+                            </f:facet>
+                            <h:outputText value="#{dataItem.note}" />
+                        </p:column>
+                    </p:dataTable>
+                    <br></br>
+                    <h:outputLabel for="addnote" value="Add Additional Note (3000 char.): "/> <br></br>
+                    <h:inputTextarea id="addnote" rows="7" cols="140" 
+                                     value="#{lBTReportController.note.note}"
+                                     validator="#{lBTReportController.validatePermissions}" >
+                        <f:validateLength maximum="3000" />
+                    </h:inputTextarea>
+                    <p:messages autoUpdate="true" for="addnote" style="color:red"/>
+                    <hr></hr>
+                    <p:commandButton value="Update"
+                                    action="#{lBTReportController.update}">
+                        <f:param name="lbtReportId" value="#{lBTReportController.lbtReportId}" />
+                    </p:commandButton>
+            </p:panel>
+        </h:form>
+            <h4> LBT Report History:  </h4>
+            <!-- credit BalusC for o:form method https://stackoverflow.com/questions/14735726/how-can-i-maintain-param-on-ajax-call -->
+            <o:form style="margin-left: 20px; margin-right: 27px;">
+            <p:dataTable id="changetable" value="#{lBTReportController.changeRecord}" var="dataItem">
+                        <f:viewParam name ="bugReportId" value ="#{lBTReportController.lbtReportId}" />
+                        <p:column headerText="Field Changed" style="width:120px;" 
+                                  sortBy="#{dataItem.fieldChanged}">
+                            <h:outputText value="#{dataItem.fieldChanged}" />
+                        </p:column>
+                        <p:column headerText="Date Changed" style="width:180px;" 
+                                  sortBy="#{dataItem.changeDate}">
+                            <h:outputText value="#{dataItem.changeDate}" />
+                        </p:column>
+                        <p:column headerText="Changed From" sortBy="#{dataItem.originalValue}">
+                            <h:outputText value="#{dataItem.originalValue}" />
+                        </p:column>
+                        <p:column headerText="Changed To" sortBy="#{dataItem.updatedValue}">
+                            <h:outputText value="#{dataItem.updatedValue}" />
+                        </p:column>
+                        <p:column headerText="updated By" sortBy="#{dataItem.updatedBy}">
+                            <h:outputText value="#{dataItem.updatedBy}" />
+                        </p:column>
+            </p:dataTable>
+            </o:form> 
+    </h:body>
+    
+</html>
