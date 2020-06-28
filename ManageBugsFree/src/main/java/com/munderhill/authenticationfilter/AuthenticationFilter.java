@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
  * @author mason
  */
 
-@WebFilter("/faces/*")
+@WebFilter("*.xhtml")
 public class AuthenticationFilter implements Filter {
 
     
@@ -57,9 +57,8 @@ public class AuthenticationFilter implements Filter {
         else {
             // Redirect to login URL
             String redirectUrl = String.format(
-                "%s://localhost:%s/ManageBugsFree/login",
-                request.getScheme(),
-                request.getServerPort()
+                "%s://www.managebugsfree-app.website/login",
+                request.getScheme()
             );
             try {
                 httpResponse.sendRedirect(redirectUrl);

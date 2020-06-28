@@ -18,7 +18,7 @@ public class CallbackServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String referer = (String) request.getSession().getAttribute("Referer");
         String redirectTo = referer != null ? 
-                referer : "/ManageBugsFree/faces/Home.xhtml";
+                referer : "/Home.xhtml";
         
         // Redirect page
         try {

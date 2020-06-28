@@ -121,15 +121,13 @@ public class LineChartController implements Serializable {
         ChartSeries opened = new ChartSeries();
         opened.setLabel("BRs Opened");
         for(LineChartData l : lineChartData1) {
-            l.setMonthYear(l.getMonthYear().replaceAll("\\s+"," "));
-            opened.set(l.getMonthYear(), l.getCount());
+            opened.set(l.getYearMonth(), l.getCount());
         }
         
         ChartSeries closed = new ChartSeries();
         closed.setLabel("BRs Closed");
         for(LineChartData l : lineChartData2) {
-            l.setMonthYear(l.getMonthYear().replaceAll("\\s+"," "));
-            closed.set(l.getMonthYear(), l.getCount());
+            closed.set(l.getYearMonth(), l.getCount());
         }
         
         model.addSeries(opened);
@@ -143,8 +141,7 @@ public class LineChartController implements Serializable {
         ChartSeries outstanding = new ChartSeries();
         outstanding.setLabel("BRs Outstanding");
         for(LineChartData l : lineChartData3) {
-            l.setMonthYear(l.getMonthYear().replaceAll("\\s+"," "));
-            outstanding.set(l.getMonthYear(), l.getCount());
+            outstanding.set(l.getYearMonth(), l.getCount());
         }
         
         model.addSeries(outstanding);
@@ -157,8 +154,7 @@ public class LineChartController implements Serializable {
         ChartSeries avgTimeToCompletion = new ChartSeries();
         avgTimeToCompletion.setLabel("Avg. Days to Close BRs");
         for(LineChartDataWithInterval l : lineChartData4) {
-            l.setMonthYear(l.getMonthYear().replaceAll("\\s+"," "));
-            avgTimeToCompletion.set(l.getMonthYear(), l.getTimeInterval());
+            avgTimeToCompletion.set(l.getYearMonth(), l.getTimeInterval());
         }
         
         model.addSeries(avgTimeToCompletion);
@@ -182,11 +178,11 @@ public class LineChartController implements Serializable {
         Axis yAxis2 = lineModel2.getAxis(AxisType.Y);
         Axis yAxis3 = lineModel3.getAxis(AxisType.Y);
         yAxis1.setMin(0);
-        yAxis1.setMax(50);
+        yAxis1.setMax(15);
         yAxis2.setMin(0);
-        yAxis2.setMax(50);
+        yAxis2.setMax(25);
         yAxis3.setMin(0);
-        yAxis3.setMax(50);
+        yAxis3.setMax(25);
         
         lineModel1.getAxes().put(AxisType.X, new CategoryAxis("Months"));
         lineModel2.getAxes().put(AxisType.X, new CategoryAxis("Months"));

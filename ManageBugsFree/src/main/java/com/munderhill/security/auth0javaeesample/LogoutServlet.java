@@ -34,7 +34,7 @@ public class LogoutServlet extends HttpServlet {
     }
 
     private String getLogoutUrl(HttpServletRequest request) {
-        String returnUrl = String.format("%s://localhost", request.getScheme());
+        String returnUrl = String.format("%s://www.managebugsfree-app.website", request.getScheme());
         int port = request.getServerPort();
         String scheme = request.getScheme();
 
@@ -43,7 +43,7 @@ public class LogoutServlet extends HttpServlet {
             returnUrl += ":" + port;
         }
 
-        returnUrl += "/ManageBugsFree/login";
+        returnUrl += "/login";
 
         // Build logout URL like:
         // https://{YOUR-DOMAIN}/v2/logout?client_id={YOUR-CLIENT-ID}&returnTo=http://localhost:8080/

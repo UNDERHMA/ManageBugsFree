@@ -32,23 +32,23 @@ public class LBTSimilarBugReports implements Serializable {
     
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "lbt_similar_bug_reports_sequence")
     @SequenceGenerator(name="lbt_similar_bug_reports_sequence", allocationSize=1, 
-            sequenceName="lbt_similar_bug_reports_sequence")
+            sequenceName="lbt_similar_bug_reports_sequence", initialValue=1)
     @Column(name="lbt_similar_bug_reports_id")
     @Id
-    private Long lbtSimilarBugReportsId;
+    private Integer lbtSimilarBugReportsId;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="lbt_report_id", nullable=false)
     private LBTReport lbtReport;
     
     @Column(name="similar_bug_report_id")
-    private Integer similarBugReportId;
+    private int similarBugReportId;
 
-    public Long getLbtSimilarBugReportsId() {
+    public Integer getLbtSimilarBugReportsId() {
         return lbtSimilarBugReportsId;
     }
 
-    public void setLbtSimilarBugReportsId(Long lbtSimilarBugReportsId) {
+    public void setLbtSimilarBugReportsId(Integer lbtSimilarBugReportsId) {
         this.lbtSimilarBugReportsId = lbtSimilarBugReportsId;
     }
 
@@ -60,11 +60,11 @@ public class LBTSimilarBugReports implements Serializable {
         this.lbtReport = lbtReport;
     }
 
-    public Integer getSimilarBugReportId() {
+    public int getSimilarBugReportId() {
         return similarBugReportId;
     }
 
-    public void setSimilarBugReportId(Integer similarBugReportId) {
+    public void setSimilarBugReportId(int similarBugReportId) {
         this.similarBugReportId = similarBugReportId;
     }
 

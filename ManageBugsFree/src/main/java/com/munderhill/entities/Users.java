@@ -34,10 +34,10 @@ public class Users implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_sequence"
     )
     @SequenceGenerator(name = "users_sequence", sequenceName = "users_sequence",
-                       allocationSize = 1,initialValue=1)
-    @OneToMany(mappedBy="enteredByUserId")
+                       allocationSize = 1, initialValue=1)
+    @OneToMany(mappedBy="entered_by_user_id")
     @Column(name="user_id")
-    private Long userId;
+    private Integer userId;
     
     @Column(name="username")
     @NotNull
@@ -50,11 +50,11 @@ public class Users implements Serializable {
     @NotNull
     private String role;
 
-    public Long getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 

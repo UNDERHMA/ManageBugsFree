@@ -54,10 +54,11 @@
             <artifactId>omnifaces</artifactId>
             <version>3.6.1</version>
         </dependency>
+        <!--change from 9.3-1101-jdbc4-->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>9.3-1101-jdbc4</version>
+            <version>42.2.8</version>
         </dependency>
 
     </dependencies>

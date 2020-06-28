@@ -111,6 +111,12 @@
                                      value="#{bugReportListController.searchFunction.endDateClosed}"
                                      class ="ui-inputfield"
                                     />
+                        &nbsp; 
+                        <h:outputLabel value="Active BRs Only"/>
+                        &nbsp;
+                        <p:selectBooleanCheckbox  id ="activebrs"
+                                     value="#{bugReportListController.searchFunction.activeReports}"
+                                    />
                         <br></br>
                         <h:outputLabel for="userassigned" value="User Assigned:"/>
                         &nbsp;

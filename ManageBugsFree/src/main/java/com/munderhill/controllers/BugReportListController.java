@@ -58,7 +58,7 @@ public class BugReportListController {
     @PostConstruct
     public void init() {
         HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-        String s = request.getPathInfo();
+        String s = request.getServletPath();
         if(s.equals("/UnassignedBugReports.xhtml")) {
             searchFunction.setUserAssigned("Unassigned");
             bugReportModel = new LazyBugReportDataModel(bugReportEJB.queryBugReports(searchFunction,false));
@@ -74,7 +74,12 @@ public class BugReportListController {
             DecodedJWT idJWT = JWT.decode(idToken);
             String userName = idJWT.getClaim("name").asString();
             searchFunction.setUserAssigned(userName);
+            searchFunction.setOpenedBy(userName);
+            searchFunction.setMyBugReports(userName);
             bugReportModel = new LazyBugReportDataModel(bugReportEJB.queryBugReports(searchFunction,true));
+            // set values back so GUI makes sense
+            searchFunction.setUserAssigned("-----");
+            searchFunction.setOpenedBy("-----");
         }
         else {
             bugReportModel =  new LazyBugReportDataModel(bugReportEJB.queryBugReports(searchFunction,false));
@@ -172,7 +177,7 @@ public class BugReportListController {
     
     public void search(){
         HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-        String s = request.getPathInfo();
+        String s = request.getServletPath();
         if(s.equals("/UnassignedBugReports.xhtml")) {
             searchFunction.setUserAssigned("Unassigned");
             bugReportModel = new LazyBugReportDataModel(bugReportEJB.queryBugReports(searchFunction,false));

@@ -32,10 +32,10 @@ public class BugReportLBTLink implements Serializable {
     
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "bridlbtlink_sequence")
     @SequenceGenerator(name="bridlbtlink_sequence", allocationSize=1, 
-            sequenceName="bridlbtlink_sequence")
+            sequenceName="bridlbtlink_sequence", initialValue=1)
     @Column(name="brid_lbt_link_id")
     @Id
-    private Long bridLbtLinkId;
+    private Integer bridLbtLinkId;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="bug_report_id", nullable=false)
@@ -45,11 +45,11 @@ public class BugReportLBTLink implements Serializable {
     @JoinColumn(name="lbt_report_id", nullable=false)
     private LBTReport lbtReport;
 
-    public Long getBridLbtLinkId() {
+    public Integer getBridLbtLinkId() {
         return bridLbtLinkId;
     }
 
-    public void setBridLbtLinkId(Long bridLbtLinkId) {
+    public void setBridLbtLinkId(Integer bridLbtLinkId) {
         this.bridLbtLinkId = bridLbtLinkId;
     }
 

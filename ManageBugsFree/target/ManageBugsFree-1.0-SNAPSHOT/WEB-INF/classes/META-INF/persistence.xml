@@ -23,11 +23,12 @@
     <class>com.munderhill.entities.StatisticsStatuses</class>
     <class>com.munderhill.entities.LineChartData</class>
     <class>com.munderhill.entities.LineChartDataWithInterval</class>
+    <class>com.munderhill.entities.Attachment</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/manage_bugs_free"/>
-      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://IP Address of Database Container:5432/manage_bugs_free"/>
+      <property name="javax.persistence.jdbc.user" value="database user"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="password"/>
+      <property name="javax.persistence.jdbc.password" value="database password"/>
       <property name="eclipselink.id-validation" value="NULL"/>
       <property name="eclipselink.logging.parameters" value="true"/>
     </properties>

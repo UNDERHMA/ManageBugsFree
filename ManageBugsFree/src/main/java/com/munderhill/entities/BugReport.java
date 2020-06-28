@@ -242,7 +242,7 @@ public class BugReport extends BugReportBaseEntity implements Serializable {
 
     public void setBugDescription(String bugDescription) {
         this.bugDescription = bugDescription;
-    }
+    }    
     
     // Used to determine whether a linked LBTReport link displays in JSF page
     public boolean hasLinkedLbtReports() {
@@ -273,19 +273,18 @@ public class BugReport extends BugReportBaseEntity implements Serializable {
     }
 
     // Used to remove similar bug reports on BugReports.xhtml page
-    public void removeSimilarBugReportById(int id) {
-        for(int i = 0; i < similarBugReportIds.size(); i++) {
+    public void removeSimilarBugReportById(Integer id) {
+        for(Integer i = 0; i < similarBugReportIds.size(); i++) {
             if(getSimilarBugReportIds().get(i).getSimilarBugReportId() == id) {
                 getSimilarBugReportIds().remove(i);
             } ///// MOVEEEEE THIS TO EJB!!!
         }
     }
 
-
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.bugReportId);
+        int hash = 7;
+        hash = 41 * hash + Objects.hashCode(this.bugReportId);
         return hash;
     }
 

@@ -35,14 +35,14 @@ public class LBTReportAdditionalNotes implements Serializable {
     
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "lbt_reports_additional_notes_sequence")
     @SequenceGenerator(name="lbt_reports_additional_notes_sequence", allocationSize=1, 
-            sequenceName="lbt_reports_additional_notes_sequence")
+            sequenceName="lbt_reports_additional_notes_sequence", initialValue=1)
     @Id
     @Column(name="lbt_note_id")
-    private Long lbtNoteId;
+    private Integer lbtNoteId;
     
     @Column(name="lbt_report_id")
     @NotNull
-    private Integer lbtReportId;
+    private int lbtReportId;
     
     @NotNull
     private String note;
@@ -55,19 +55,19 @@ public class LBTReportAdditionalNotes implements Serializable {
     @NotNull
     private Timestamp entryDate;
 
-    public Long getLbtNoteId() {
+    public Integer getLbtNoteId() {
         return lbtNoteId;
     }
 
-    public void setLbtNoteId(Long lbtNoteId) {
+    public void setLbtNoteId(Integer lbtNoteId) {
         this.lbtNoteId = lbtNoteId;
     }
 
-    public Integer getLbtReportId() {
+    public int getLbtReportId() {
         return lbtReportId;
     }
 
-    public void setLbtReportId(Integer lbtReportId) {
+    public void setLbtReportId(int lbtReportId) {
         this.lbtReportId = lbtReportId;
     }
 

@@ -33,7 +33,7 @@ public class LBTReportHistory implements Serializable {
     private static final long serialVersionUID = 16L;
     
     @Column(name="lbt_report_id")
-    private Integer lbtReportId;
+    private int lbtReportId;
     
     @NotNull
     private String title;
@@ -90,11 +90,11 @@ public class LBTReportHistory implements Serializable {
     @Column(name="end_date")
     private Timestamp endDate;
 
-    public Integer getLbtReportId() {
+    public int getLbtReportId() {
         return lbtReportId;
     }
 
-    public void setLbtReportId(Integer lbtReportId) {
+    public void setLbtReportId(int lbtReportId) {
         this.lbtReportId = lbtReportId;
     }
 

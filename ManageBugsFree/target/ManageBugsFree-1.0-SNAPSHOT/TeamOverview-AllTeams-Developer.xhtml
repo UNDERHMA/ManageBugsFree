@@ -39,9 +39,9 @@
                         </p:columnGroup>
                         <p:column style="padding:0px;margin:0px;" colspan="2">
                             <h:dataTable value="#{statisticsummarylist.statusStatistics}" var="stats"
-                                         style="min-height: 88px; min-width: 126px;border:0px"
+                                         style="min-height: 150px; min-width: 253px;border:0px"
                                          styleClass="td, th">
-                                <p:column style="border:0px"> 
+                                <p:column>
                                     <h:outputText value="#{stats.status}" />
                                 </p:column>
                                 <p:column>
@@ -51,7 +51,8 @@
                         </p:column>
                         <p:column style="padding:0px;margin:0px;" colspan="2">
                             <h:dataTable value="#{statisticsummarylist.criticalStatusStatistics}" var="criticalstats"
-                                         style="min-height: 88px; min-width: 126px;border:0px">
+                                         style="min-height: 150px; min-width: 253px;border:0px"
+                                         styleClass="td, th">
                                 <p:column>
                                     <h:outputText value="#{criticalstats.status}" />
                                 </p:column>

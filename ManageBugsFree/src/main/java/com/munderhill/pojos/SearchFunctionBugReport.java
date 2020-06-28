@@ -21,6 +21,7 @@ public class SearchFunctionBugReport extends SearchFunction {
     private String myBugReports = "";
     private java.util.Date startDateClosed;
     private java.util.Date endDateClosed;
+    private boolean activeReports = false;
 
     public Integer getBugReportId() {
         return bugReportId;
@@ -127,6 +128,14 @@ public class SearchFunctionBugReport extends SearchFunction {
 
     public void setEndDateClosed(Date endDateClosed) {
         this.endDateClosed = endDateClosed;
+    }
+
+    public boolean isActiveReports() {
+        return activeReports;
+    }
+
+    public void setActiveReports(boolean activeReports) {
+        this.activeReports = activeReports;
     }
 
 }

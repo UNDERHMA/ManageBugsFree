@@ -256,6 +256,13 @@ public class BugReportEJB {
             else {
                 query.setParameter("search", 1);
             }
+            
+            if(searchFunction.isActiveReports()) {
+                //get only non-closed reports if isActiveReports is selected
+                query.setParameter("search", 0);
+                query.setParameter("enddateclosed", new java.sql.Date(0)); //set to 1/1/1970
+                query.setParameter("startdateclosed", new java.sql.Date(0)); //set to 1/1/1970
+            }
 
             if(searchFunction.getSoftwareVersion().length() != 0 && !searchFunction.getSoftwareVersion().equals("-----")) {
                 query.setParameter("softwareVersion", searchFunction.getSoftwareVersion());

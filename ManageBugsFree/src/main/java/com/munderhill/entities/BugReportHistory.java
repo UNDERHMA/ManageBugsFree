@@ -33,7 +33,7 @@ public class BugReportHistory implements Serializable {
     private static final long serialVersionUID = 15L;
     
     @Column(name="bug_report_id")
-    private Integer bugReportId;
+    private int bugReportId;
     
     @NotNull
     private String title;
@@ -86,11 +86,11 @@ public class BugReportHistory implements Serializable {
     private Timestamp endDate;
     
     
-    public Integer getBugReportId() {
+    public int getBugReportId() {
         return bugReportId;
     }
 
-    public void setBugReportId(Integer bugReportId) {
+    public void setBugReportId(int bugReportId) {
         this.bugReportId = bugReportId;
     }
 

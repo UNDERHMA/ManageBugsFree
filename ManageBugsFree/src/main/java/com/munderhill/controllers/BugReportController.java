@@ -104,8 +104,7 @@ public class BugReportController {
         
         // Initializing note bugreportid and enteredbyuserid
         note.setBugReportId(bugReportId);
-        Users user = new Users();
-        user.setUserId(1L);
+        Users user = usersEJB.getUser(usersEJB.checkUser());
         note.setEnteredByUserId(user);
         
         // initializing dropdowns

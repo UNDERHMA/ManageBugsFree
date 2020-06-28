@@ -28,46 +28,46 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @NamedNativeQuery(name = "findAllNotesByBRId", resultClass = BugReportAdditionalNotes.class,
-        query = "SELECT * FROM BugReportAdditionalNotes WHERE bug_report_id = #bugReportId")
+        query = "SELECT * FROM BugReportAdditionalNotes WHERE bug_report_id = #bugReportId ORDER BY entry_date")
 public class BugReportAdditionalNotes implements Serializable {
 
     private static final long serialVersionUID = 9L;
     
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "bug_reports_additional_notes_sequence")
     @SequenceGenerator(name="bug_reports_additional_notes_sequence", allocationSize=1, 
-            sequenceName="bug_reports_additional_notes_sequence")
+            sequenceName="bug_reports_additional_notes_sequence", initialValue=1)
     @Id
     @Column(name="br_note_id")
-    private Long brNoteId;
+    private Integer brNoteId;
     
     @Column(name="bug_report_id")
     @NotNull
-    private Integer bugReportId;
+    private int bugReportId;
     
     @NotNull
     private String note;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id")
-    private Users enteredByUserId;
-    
+    @JoinColumn(name="entered_by_user_id")
+    private Users enteredByUserId; 
+   
     @Column(name="entry_date")
     @NotNull
     private Timestamp entryDate;
 
-    public Long getBrNoteId() {
+    public int getBrNoteId() {
         return brNoteId;
     }
 
-    public void setBrNoteId(Long brNoteId) {
+    public void setBrNoteId(int brNoteId) {
         this.brNoteId = brNoteId;
     }
 
-    public Integer getBugReportId() {
+    public int getBugReportId() {
         return bugReportId;
     }
 
-    public void setBugReportId(Integer bugReportId) {
+    public void setBugReportId(int bugReportId) {
         this.bugReportId = bugReportId;
     }
 

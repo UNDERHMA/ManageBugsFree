@@ -101,8 +101,7 @@ public class LBTReportController {
         
          // Initializing note bugreportid and enteredbyuserid
         note.setLbtReportId(lbtReportId);
-        Users user = new Users();
-        user.setUserId(1L);
+        Users user = usersEJB.getUser(usersEJB.checkUser());
         note.setEnteredByUserId(user);
         
         // initializing dropdowns

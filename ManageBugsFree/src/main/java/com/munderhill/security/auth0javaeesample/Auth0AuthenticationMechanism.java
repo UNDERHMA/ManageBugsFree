@@ -44,7 +44,7 @@ public class Auth0AuthenticationMechanism implements HttpAuthenticationMechanism
             try {
                 // Creating session and com.auth0.state attribute for state validation
                 HttpSession session = httpServletRequest.getSession(true);
-                //only set stat if the user
+                //set state if it exists in httpServlet request else check cookies for state and set it
                 if(httpServletRequest.getParameter("state") != null) {
                     session.setAttribute("com.auth0.state", httpServletRequest.getParameter("state"));
                 }
@@ -85,6 +85,6 @@ public class Auth0AuthenticationMechanism implements HttpAuthenticationMechanism
     }
 
     private boolean isCallbackRequest(HttpServletRequest request) {
-        return request.getRequestURI().equals("/ManageBugsFree/callback") && request.getParameter("code") != null;
+        return request.getRequestURI().equals("/callback") && request.getParameter("code") != null;
     }
 }

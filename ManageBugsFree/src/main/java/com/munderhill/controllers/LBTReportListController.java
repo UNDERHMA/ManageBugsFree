@@ -61,7 +61,7 @@ public class LBTReportListController {
     @PostConstruct
     public void init() {
         HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-        String s = request.getPathInfo();
+        String s = request.getServletPath();
         if(s.equals("/UnlinkedLBTReports.xhtml")) {
             searchFunction.setBugReportId(0);
             lbtReportModel = new LazyLBTReportDataModel(lBTReportEJB.queryLBTReports(searchFunction, false));
@@ -212,7 +212,7 @@ public class LBTReportListController {
     
      public void search(){
         HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-        String s = request.getPathInfo();
+        String s = request.getServletPath();
         if(s.equals("/UnlinkedLBTReports.xhtml")) {
             searchFunction.setBugReportId(0);
             lbtReportModel = new LazyLBTReportDataModel(lBTReportEJB.queryLBTReports(searchFunction, false));

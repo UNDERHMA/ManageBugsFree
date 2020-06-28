@@ -9,11 +9,9 @@ import java.io.IOException;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 
 @WebServlet(urlPatterns = "/login")
@@ -31,9 +29,8 @@ public class LoginServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // URL where the application will receive the authorization code (e.g., http://localhost:3000/callback)
         String callbackUrl = String.format(
-                "%s://192.168.1.136:%s/ManageBugsFree/callback",
-                request.getScheme(),
-                request.getServerPort()
+                "%s://www.managebugsfree-app.website/callback",
+                request.getScheme()
         );
 
         // Create the authorization URL to redirect the user to, to begin the authentication flow.

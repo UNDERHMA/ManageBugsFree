@@ -5,10 +5,6 @@
  */
 package com.munderhill.pojos;
 
-import com.munderhill.entities.AggregateStatistics;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author mason
