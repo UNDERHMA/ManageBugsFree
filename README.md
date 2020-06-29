@@ -13,16 +13,43 @@ The src/test/java/website/managebugsfreeapp/testdata folder includes scripts tha
 
 Jelastic's Paas platform was used to host this application in the cloud on a Glassfish 5.1 server with a Postgres 12.0 database. This application could also be deployed in a docker container onto AWS or Azure if you can find a good Glassfish 5.1 image and configure it correctly to run. I found Jelastic to be easier, as it allowed for easier container configuration, although I am new to docker, so a more experienced user may find it easier to work with docker directly.
 
-### Here are some snapshots that show various parts of the application:  
+### Here are some snapshots that show various parts of the application:
+&nbsp;
+&nbsp;
+&nbsp;
 ### Auth0 User Management Page:
-![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Users.PNG?raw=true)  
+&nbsp;
+![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Users.PNG?raw=true)
+&nbsp;
+&nbsp;
+&nbsp;
 ### Auth0 Role Management Page:
-![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Roles.PNG?raw=true)  
+&nbsp;
+![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Roles.PNG?raw=true)
+&nbsp;
+&nbsp;
+&nbsp;
 ### www.managebugsfree-app.website login page provided by Auth0:
-![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Login.PNG?raw=true)  
+&nbsp;
+![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Login.PNG?raw=true)
+&nbsp;
+&nbsp;
+&nbsp;
 ### www.managebugsfree-app.website home page, displayed after successful authentication at the login page provided by Auth0:
-![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Home.PNG?raw=true)  
+&nbsp;
+![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Home.PNG?raw=true)
+&nbsp;
+&nbsp;
+&nbsp;
 ### www.managebugsfree-app.website bug reports page, showing the most recent bug reports in a sortable and searchable grid:
-![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Bug%20Reports.PNG?raw=true)  
+&nbsp;
+![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Bug%20Reports.PNG?raw=true)
+&nbsp;
+&nbsp;
+&nbsp;
 ### Jelastic's PaaS Eapps Dashboard, where www.managebugsfree-app.website is hosted:
-![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Eapps.PNG?raw=true) 
+&nbsp;
+![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Eapps.PNG?raw=true)
+&nbsp;
+&nbsp;
+&nbsp;
