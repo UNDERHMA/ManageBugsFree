@@ -13,7 +13,11 @@ The src/test/java/website/managebugsfreeapp/testdata folder includes scripts tha
 
 Jelastic's Paas platform was used to host this application in the cloud on a Glassfish 5.1 server with a Postgres 12.0 database. This application could also be deployed in a docker container onto AWS or Azure if you can find a good Glassfish 5.1 image and configure it correctly to run. I found Jelastic to be easier, as it allowed for easier container configuration, although I am new to docker, so a more experienced user may find it easier to work with docker directly. 
 
+
+
 ### Here are some snapshots that show various parts of the application:
+
+
 
 ### Auth0 User Management Page:
 
