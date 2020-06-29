@@ -19,21 +19,31 @@ Jelastic's Paas platform was used to host this application in the cloud on a Gla
 
 ![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Users.PNG?raw=true)
 
+
+
 ### Auth0 Role Management Page:
 
 ![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Roles.PNG?raw=true)
 
-### www.managebugsfree-app.website's login page provided by Auth0:
+
+
+### www.managebugsfree-app.website login page provided by Auth0:
 
 ![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Login.PNG?raw=true)
 
-### www.managebugsfree-app.website's home page, displayed after successful authentication at the login page provided by Auth0:
+
+
+### www.managebugsfree-app.website home page, displayed after successful authentication at the login page provided by Auth0:
 
 ![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Home.PNG?raw=true)
 
-### www.managebugsfree-app.website's bug reports page, showing the most recent bug reports in a sortable and searchable grid:
+
+
+### www.managebugsfree-app.website bug reports page, showing the most recent bug reports in a sortable and searchable grid:
 
 ![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Bug%20Reports.PNG?raw=true)
+
+
 
 ### Jelastic's PaaS Eapps Dashboard, where www.managebugsfree-app.website is hosted:
 
