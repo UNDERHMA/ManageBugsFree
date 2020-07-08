@@ -170,11 +170,11 @@ Create Table BRIDLBTLink (
 Insert Into Users(user_id, username, team_name, role)
 VALUES(1, 'Unassigned', 'Unassigned', 'customersupportrepresentative'),
 (2, 'j.smith', 'Software Development Team 1', 'softwaredeveloper'),
-(3, 'w.davidson', 'Unassigned', 'customersupportrepresentative'),
-(4, 'm.underhill', 'Unassigned', 'customersupportrepresentative'),
+(3, 'w.davidson', 'Customer Support Team 2', 'customersupportrepresentative'),
+(4, 'm.underhill', 'Customer Support Team 1', 'customersupportrepresentative'),
 (5, 'm.johnson', 'Software Development Team 2', 'softwaredeveloper'),
-(6, 'a.turner', 'Software Development Team 2', 'softwaredeveloper'),
-(7, 'j.burns', 'Unassigned', 'customersupportrepresentative');
+(6, 'a.turner', 'Software Development Team 3', 'softwaredeveloper'),
+(7, 'j.burns', 'Customer Support Team 3', 'customersupportrepresentative');
 
 Insert Into Teams(team_id,team_name,team_type)
 VALUES(1, 'Unassigned', 'N/A'),
