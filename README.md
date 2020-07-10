@@ -16,15 +16,15 @@ Jelastic's PaaS platform was used to host this application in the cloud on a Gla
 &nbsp;
 &nbsp;
 ### ManageBugsFree Application Video Overview:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MUA-t4On4fA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![ManageBugsFree](https://www.youtube.com/embed/MUA-t4On4fA)](https://www.youtube.com/embed/MUA-t4On4fA)
 &nbsp;
 &nbsp;
 ### Auth0 Configuration Video Overview:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/keYJ4eZDPI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Auth0](https://www.youtube.com/embed/keYJ4eZDPI4](https://www.youtube.com/embed/keYJ4eZDPI4)
 &nbsp;
 &nbsp;
 ### Jelastic eApps Environment Video Overview:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zAexF2q4VXM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Jelastic](https://www.youtube.com/embed/zAexF2q4VXM](https://www.youtube.com/embed/zAexF2q4VXM)
 &nbsp;
 &nbsp;
 ### Auth0 User Management Page:
