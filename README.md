@@ -19,47 +19,15 @@ Jelastic's PaaS platform was used to host this application in the cloud on a Gla
 [![ManageBugsFree](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/ManageBugsFree_Video.JPG)](https://www.youtube.com/embed/MUA-t4On4fA)
 &nbsp;
 &nbsp;
+&nbsp;
+&nbsp;
 ### Auth0 Configuration Video Overview:
 [![Auth0](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Auth0_Video.JPG)](https://www.youtube.com/embed/keYJ4eZDPI4)
 &nbsp;
 &nbsp;
+&nbsp;
+&nbsp;
 ### Jelastic eApps Environment Video Overview:
 [![Jelastic](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/eApps_Video.JPG)](https://www.youtube.com/embed/zAexF2q4VXM)
-&nbsp;
-&nbsp;
-### Auth0 User Management Page:
-&nbsp;
-![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Users.PNG?raw=true)
-&nbsp;
-&nbsp;
-&nbsp;
-### Auth0 Role Management Page:
-&nbsp;
-![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Roles.PNG?raw=true)
-&nbsp;
-&nbsp;
-&nbsp;
-### www.managebugsfree-app.website login page provided by Auth0:
-&nbsp;
-![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Login.PNG?raw=true)
-&nbsp;
-&nbsp;
-&nbsp;
-### www.managebugsfree-app.website home page, displayed after successful authentication at the login page provided by Auth0:
-&nbsp;
-![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Home.PNG?raw=true)
-&nbsp;
-&nbsp;
-&nbsp;
-### www.managebugsfree-app.website bug reports page, showing the most recent bug reports in a sortable and searchable grid:
-&nbsp;
-![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Bug%20Reports.PNG?raw=true)
-&nbsp;
-&nbsp;
-&nbsp;
-### Jelastic's PaaS Eapps Dashboard, where www.managebugsfree-app.website is hosted:
-&nbsp;
-![alt text](https://github.com/UNDERHMA/ManageBugsFree/blob/master/Images/Eapps.PNG?raw=true)
-&nbsp;
 &nbsp;
 &nbsp;
