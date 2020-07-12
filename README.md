@@ -10,6 +10,7 @@ It loosely follows an MVC architectural pattern, with JavaServer Faces (JSF) pag
 This project uses Auth0 for authentication and authorization, based on the Auth0 Java EE SDK Quickstart example (https://auth0.com/docs/quickstart/webapp/java-ee/01-login). The website.managebugsfreeapp.security.auth0javaeesample package consists of:
 
 -classes that prepare for authentication by creating an Auth0 authorization URL where users log in (Auth0AuthenticationConfig, Auth0AuthenticationProvider, Auth0JwtCredential, Auth0JwtIdentityStore, Auth0JwtPrincipal and LoginServlet)
+
 -classes that create a JSON Web Token (JWT) after Auth0 returns an authorization code upon successful authentication. Auth0 issues an Http Request to the CallbackServlet class which redirects to the Home.xhtml web page, then the Auth0AuthenticationMechanism processes the authorization code and creates the JWT after an Http Request to the CallbackServlet is made). 
 
 If the user has a valid com.auth0.state cookie or entered the correct username/password, their HttpSession is given accessToken, idToken and User attributes that permit them to enter the application. The website.managebugsfreeapp.authenticationfilter package's AuthenticationFilter class applies a filter to all .xhtml pages and only permits access if the user is deemed active based on the HttpSession accessToken, idToken and User attributes. 
