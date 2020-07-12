@@ -11,7 +11,7 @@ This project uses Auth0 for authentication and authorization, based on the Auth0
 
 -classes that prepare for authentication by creating an Auth0 authorization URL where users log in (Auth0AuthenticationConfig, Auth0AuthenticationProvider, Auth0JwtCredential, Auth0JwtIdentityStore, Auth0JwtPrincipal and LoginServlet)
 
--classes that create a JSON Web Token (JWT) after Auth0 returns an authorization code upon successful authentication. Auth0 issues an Http Request to the CallbackServlet class which redirects to the Home.xhtml web page, then the Auth0AuthenticationMechanism processes the authorization code and creates the JWT after an Http Request to the CallbackServlet is made). 
+-classes that create a JSON Web Token (JWT) after Auth0 returns an authorization code upon successful authentication. Auth0 issues an Http Request to the CallbackServlet class which redirects to the Home.xhtml web page, then the Auth0AuthenticationMechanism processes the authorization code and creates the JWT after an Http Request to the CallbackServlet is made. 
 
 If the user has a valid com.auth0.state cookie or entered the correct username/password, their HttpSession is given accessToken, idToken and User attributes that permit them to enter the application. The website.managebugsfreeapp.authenticationfilter package's AuthenticationFilter class applies a filter to all .xhtml pages and only permits access if the user is deemed active based on the HttpSession accessToken, idToken and User attributes. 
 
@@ -25,7 +25,7 @@ Users and roles for authentication and authorization are created and stored on A
 
 Originally, this project ran on localhost. A 6/28/2020 commit included changes to the web.xml and persistence.xml that allows this project to run over the internet through Jelastic's PaaS platform. Some details from the web.xml and persistence.xml were omitted for security. 
 
-Jelastic's PaaS platform hosts this application in the cloud on a Glassfish 5.1 server with a Postgres 12.0 database. This application can also be deployed in a docker container onto AWS or Azure, provided a good Glassfish 5.1 image is found and configured correctly. I found that Jelastic allowed for easier container configuration, although I am new to docker, so a more experienced user may find it easier to work with docker directly.
+Jelastic's PaaS platform hosts this application in the cloud on a Glassfish 5.1 server with a Postgres 12.0 database. This application can also be deployed in a Docker container onto AWS or Azure, provided a good Glassfish 5.1 image is found and configured correctly. I found that Jelastic allowed for easier container configuration, although I am new to Docker, so a more experienced user may find it easier to work with Docker directly.
 
 ### Scripts
 
