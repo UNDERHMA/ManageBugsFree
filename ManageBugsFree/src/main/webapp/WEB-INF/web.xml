@@ -4,18 +4,18 @@
    
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
-        <param-value>Development</param-value>
+        <param-value>Production</param-value>
     </context-param>
     
     <env-entry>
     <env-entry-name>auth0.domain</env-entry-name>
     <env-entry-type>java.lang.String</env-entry-type>
-    <env-entry-value>HIDDEN, DO NOT WANT TO MAKE THIS PUBLIC - SETUP ON AUTH0 WEBSITE</env-entry-value>
+    <env-entry-value>dev-mr9ki84b.auth0.com</env-entry-value>
     </env-entry>
     <env-entry>
         <env-entry-name>auth0.clientId</env-entry-name>
         <env-entry-type>java.lang.String</env-entry-type>
-        <env-entry-value>HIDDEN, DO NOT WANT TO MAKE THIS PUBLIC - SETUP ON AUTH0 WEBSITE</env-entry-value>
+        <env-entry-value>QRer7FTL3MvXwPep7WXxPyphoDvKoa5X</env-entry-value>
     </env-entry>
     <env-entry>
         <env-entry-name>auth0.clientSecret</env-entry-name>
@@ -50,34 +50,31 @@
         </session-timeout>
     </session-config>
     
-    <!-- web fonts -->
+    <!-- MIT License -->
+    <!-- chrishj and srbala - Primefaces Forum https://forum.primefaces.org/viewtopic.php?t=42002 -->
     <mime-mapping>
         <extension>eot</extension>
         <mime-type>application/vnd.ms-fontobject</mime-type>
     </mime-mapping>
-    <mime-mapping>
-        <extension>otf</extension>
-        <mime-type>font/opentype</mime-type>
+    <mime-mapping>  
+        <extension>otf</extension>  
+        <mime-type>font/opentype</mime-type>  
+    </mime-mapping>      
+    <mime-mapping>  
+        <extension>ttf</extension>  
+        <mime-type>application/x-font-ttf</mime-type>  
+    </mime-mapping>      
+    <mime-mapping>  
+        <extension>woff</extension>  
+        <mime-type>application/x-font-woff</mime-type>  
     </mime-mapping>
-    <mime-mapping>
-        <extension>ttf</extension>
-        <mime-type>application/x-font-ttf</mime-type>
+    <mime-mapping>  
+        <extension>svg</extension>  
+        <mime-type>image/svg+xml</mime-type>  
     </mime-mapping>
-    <mime-mapping>
-        <extension>woff</extension>
-        <mime-type>application/x-font-woff</mime-type>
-    </mime-mapping>
-      <mime-mapping>
-        <extension>woff2</extension>
-        <mime-type>application/x-font-woff2</mime-type>
-    </mime-mapping>
-    <mime-mapping>
-        <extension>svg</extension>
-        <mime-type>image/svg+xml</mime-type>
-    </mime-mapping>
-    <mime-mapping>
-        <extension>ico</extension>
-        <mime-type>image/x-icon</mime-type>
+    <mime-mapping>  
+    <extension>woff2</extension>  
+    <mime-type>application/x-font-woff2</mime-type>  
     </mime-mapping>
     
     <!-- remove this for eApps deployment. SSL is containter based -->

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package website.managebugsfreeapp.ejb;
 
 import website.managebugsfreeapp.entities.BugReport;
@@ -50,6 +46,7 @@ public class LBTReportEJB {
             int i = 0;
             for(i = 0; i < result.size()-1; i++) {
                 LBTReportHistory original = result.get(i);
+                // CC BY-SA 4.0 License, available in package folder. Code snippet changed to fit functions needs.
                 // credit to technique from Zim-Zam O'Pootertoot https://stackoverflow.com/questions/17095628/loop-over-all-fields-in-a-java-class
                 Field[] originalArray = original.getClass().getDeclaredFields();
                 // set fields to accessible

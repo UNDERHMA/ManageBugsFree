@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package website.managebugsfreeapp.controllers;
 
 import com.auth0.jwt.JWT;
@@ -30,6 +26,8 @@ import javax.servlet.http.HttpSession;
  */
 @FacesConfig(
         // Activates CDI build-in beans
+        // CC BY-SA 4.0 License, available in package folder. Code snippet not changed in any way.
+        // Tadas B. https://stackoverflow.com/questions/45682309/changing-faces-config-xml-from-2-2-to-2-3-causes-javax-el-propertynotfoundexcept
         version = JSF_2_3
 )
 
@@ -76,9 +74,10 @@ public class UserSettingsController {
         teams = teamsEJB.teamsByType(listType);
 
         // Update successful displays on update
-        //adapted from post by Tobias Amon, https://liferay.dev/forums/-/message_boards/message/1992225
-        FacesContext context = FacesContext.getCurrentInstance();
-        Map<String, String> parameterMap = context.getExternalContext().getRequestParameterMap();
+        // CC BY-SA 4.0 License, available in package folder. Code snippet not changed in any way.
+        // adapted from post by Erick, https://stackoverflow.com/questions/34031175/get-parameter-not-present-in-request-parameter-map
+        Map<String, String> parameterMap = (Map<String, String>) FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+        
         if(parameterMap.containsKey("updated")) {
             updated = "Update Successful!";
         }

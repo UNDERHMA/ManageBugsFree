@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package website.managebugsfreeapp.entities;
 
 import java.io.Serializable;
@@ -33,6 +29,7 @@ import org.eclipse.persistence.annotations.Customizer;
 @Table(name = "LBTReports")
 @NamedNativeQuery(name = "findLBTReportById", resultClass = LBTReport.class, query = "SELECT * \n" +
                 "FROM LBTReports WHERE lbt_report_id = #lbtReportId ")
+// CC BY-SA 4.0 License, available in package folder. Code snippet changed to suit data.
 //modified from response by ruffin and jonVD https://stackoverflow.com/questions/4193705/sql-server-select-last-n-rows
 @NamedNativeQuery(name = "queryLBTReports", resultClass = LBTReport.class, query = "SELECT * \n" +
                 "FROM\n" +
@@ -65,6 +62,7 @@ import org.eclipse.persistence.annotations.Customizer;
                 "    OR #similarBugReportId = -1) \n" +
                 "    AND LOWER(abbreviated_stack_trace) like LOWER(#abbreviatedStackTrace) AND LOWER(bug_description) like LOWER(#bugDescription)\n" +
                 ") as lbt_reports_2 ORDER BY lbt_report_id DESC LIMIT 1000")
+// CC BY-SA 4.0 License, available in package folder. Code snippet changed to suit data.
 //modified from response by ruffin and jonVD https://stackoverflow.com/questions/4193705/sql-server-select-last-n-rows
 @NamedNativeQuery(name = "queryMyLBTReports", resultClass = LBTReport.class, query = "SELECT * \n" +
                 "FROM\n" +

@@ -4,31 +4,31 @@
   <persistence-unit name="my_persistence_unit" transaction-type="JTA">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>manage_bugs_freeDS</jta-data-source>
-    <class>com.munderhill.entities.BugReport</class>
-    <class>com.munderhill.entities.Teams</class>
-    <class>com.munderhill.entities.Priorities</class>
-    <class>com.munderhill.entities.SoftwareVersions</class>
-    <class>com.munderhill.entities.LBTReport</class>
-    <class>com.munderhill.entities.Statuses</class>
-    <class>com.munderhill.entities.BugReportAdditionalNotes</class>
-    <class>com.munderhill.entities.Users</class>
-    <class>com.munderhill.entities.LBTReportAdditionalNotes</class>
-    <class>com.munderhill.entities.BugReportLBTLink</class>
     <class>com.munderhill.entities.SimilarBugReports</class>
-    <class>com.munderhill.entities.BRSimilarBugReports</class>
-    <class>com.munderhill.entities.LBTSimilarBugReports</class>
-    <class>com.munderhill.entities.BugReportHistory</class>
-    <class>com.munderhill.entities.LBTReportHistory</class>
-    <class>com.munderhill.entities.Topics</class>
     <class>com.munderhill.entities.StatisticsStatuses</class>
-    <class>com.munderhill.entities.LineChartData</class>
-    <class>com.munderhill.entities.LineChartDataWithInterval</class>
     <class>com.munderhill.entities.Attachment</class>
+    <class>website.managebugsfreeapp.entities.BugReportHistory</class>
+    <class>website.managebugsfreeapp.entities.LBTReportAdditionalNotes</class>
+    <class>website.managebugsfreeapp.entities.Priorities</class>
+    <class>website.managebugsfreeapp.entities.LineChartDataWithInterval</class>
+    <class>website.managebugsfreeapp.entities.Topics</class>
+    <class>website.managebugsfreeapp.entities.Users</class>
+    <class>website.managebugsfreeapp.entities.BugReport</class>
+    <class>website.managebugsfreeapp.entities.LBTReport</class>
+    <class>website.managebugsfreeapp.entities.LineChartData</class>
+    <class>website.managebugsfreeapp.entities.Teams</class>
+    <class>website.managebugsfreeapp.entities.BugReportLBTLink</class>
+    <class>website.managebugsfreeapp.entities.Statuses</class>
+    <class>website.managebugsfreeapp.entities.BugReportAdditionalNotes</class>
+    <class>website.managebugsfreeapp.entities.SoftwareVersions</class>
+    <class>website.managebugsfreeapp.entities.LBTReportHistory</class>
+    <class>website.managebugsfreeapp.entities.LBTSimilarBugReports</class>
+    <class>website.managebugsfreeapp.entities.BRSimilarBugReports</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://IP Address of Database Container:5432/manage_bugs_free"/>
-      <property name="javax.persistence.jdbc.user" value="database user"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/manage_bugs_free"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="database password"/>
+      <property name="javax.persistence.jdbc.password" value="password"/>
       <property name="eclipselink.id-validation" value="NULL"/>
       <property name="eclipselink.logging.parameters" value="true"/>
     </properties>

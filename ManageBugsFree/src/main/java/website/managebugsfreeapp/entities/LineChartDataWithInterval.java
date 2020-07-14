@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package website.managebugsfreeapp.entities;
 
 import java.io.Serializable;
@@ -16,6 +12,7 @@ import javax.persistence.NamedNativeQuery;
  */
 @Entity
 @NamedNativeQuery(name = "findAvgDaysToClosedPerMonth", resultClass = LineChartDataWithInterval.class, 
+        // CC BY-SA 4.0 License, available in package folder. Code snippet changed to suit data.
         query = "--to char/date_part technique from Marcel Chastain https://stackoverflow.com/questions/15691127/postgresql-query-to-count-group-by-day-and-display-days-with-no-data/22394921\n" +
         "--::text technique from pnorton https://stackoverflow.com/questions/36869703/extract-month-from-date-field\n" +
         "SELECT m.month_timestamp as yearMonth, Case WHEN AVG(br.date_first_closed - br.date_created) IS NULL THEN 0 \n" +

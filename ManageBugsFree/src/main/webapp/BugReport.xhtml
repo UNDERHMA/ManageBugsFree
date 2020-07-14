@@ -10,7 +10,7 @@
               
     <h:body style="padding-bottom: 100px">
 
-        <ui:include src="templates/default/template.xhtml" />
+        <ui:include src="templates/template.xhtml" />
         <br></br>
         <h1>
             <i class="fa fa-file-text"></i> 
@@ -190,6 +190,7 @@
         </h:form>
         
         <h4> Bug Report History:  </h4>
+            <!-- CC BY-SA 4.0 License, available in package folder. Code changed to suit need. -->
             <!-- credit BalusC for o:form method https://stackoverflow.com/questions/14735726/how-can-i-maintain-param-on-ajax-call -->
             <o:form style="margin-left: 20px; margin-right: 27px;">
             <p:dataTable id="changetable" value="#{bugReportController.changeRecord}" var="dataItem">

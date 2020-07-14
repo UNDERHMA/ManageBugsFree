@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package website.managebugsfreeapp.controllers;
 
 import com.auth0.jwt.JWT;
@@ -46,6 +42,8 @@ import javax.servlet.http.HttpSession;
  */
 @FacesConfig(
         // Activates CDI build-in beans
+        // CC BY-SA 4.0 License, available in package folder. Code snippet not changed in any way.
+        // Tadas B. https://stackoverflow.com/questions/45682309/changing-faces-config-xml-from-2-2-to-2-3-causes-javax-el-propertynotfoundexcept
         version = JSF_2_3
 )
 
@@ -82,9 +80,10 @@ public class BugReportController {
     @PostConstruct
     public void init() {
         // Get BugReportID and justCreated number from url
-        //adapted from post by Tobias Amon, https://liferay.dev/forums/-/message_boards/message/1992225
-        FacesContext context = FacesContext.getCurrentInstance();
-        Map<String, String> parameterMap = context.getExternalContext().getRequestParameterMap();
+        // CC BY-SA 4.0 License, available in package folder. Code snippet not changed in any way.
+        // adapted from post by Erick, https://stackoverflow.com/questions/34031175/get-parameter-not-present-in-request-parameter-map
+        Map<String, String> parameterMap = (Map<String, String>) FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+        
         bugReportId = Integer.parseInt(parameterMap.get("bugReportId"));
         if(parameterMap.containsKey("justCreated")) {
             justCreated = " Created";
@@ -350,10 +349,11 @@ public class BugReportController {
         }
     }
     
-    // used Pankaj article for reference https://www.journaldev.com/7035/jsf-validation-example-tutorial-validator-tag-custom-validator
     public void validateSimilarBRId(FacesContext context, UIComponent component, Integer input) {
         if(input != null) {
             if(!bugReportEJB.validateSimilarBRId(input)) {
+                // MIT License in package folder
+                // Pankaj Kumar https://github.com/journaldev/journaldev/blob/master/JSF/JSF_ValidationModel/src/main/java/com/journaldev/jsf/bean/Mobile.java
                 ((UIInput) component).setValid(false);
                 FacesMessage message = new FacesMessage("This BugReportId does not exists");
                 context.addMessage(component.getClientId(context), message);
@@ -361,10 +361,11 @@ public class BugReportController {
         }
     }
     
-    // used Pankaj article for reference https://www.journaldev.com/7035/jsf-validation-example-tutorial-validator-tag-custom-validator
     public void validateLinkedLBTId(FacesContext context, UIComponent component, Integer input) {
         if(input != null) {
             if(!bugReportEJB.validateLinkedLBTId(input)) {
+                // MIT License in package folder
+                // Pankaj Kumar https://github.com/journaldev/journaldev/blob/master/JSF/JSF_ValidationModel/src/main/java/com/journaldev/jsf/bean/Mobile.java
                 ((UIInput) component).setValid(false);
                 FacesMessage message = new FacesMessage("This LbtReportId does not exists");
                 context.addMessage(component.getClientId(context), message);
@@ -372,7 +373,6 @@ public class BugReportController {
         }
     }
     
-    // used Pankaj article for reference https://www.journaldev.com/7035/jsf-validation-example-tutorial-validator-tag-custom-validator
     public void validatePermissions(FacesContext context, UIComponent component, String input) {
         // Checking authorization token for permissions - return with faces message if invalid
         HttpSession session = (HttpSession) context.getExternalContext().getSession(false);
@@ -386,6 +386,8 @@ public class BugReportController {
             }
         }
         if(!hasValidPermissions) {
+            // MIT License in package folder
+            // Pankaj Kumar https://github.com/journaldev/journaldev/blob/master/JSF/JSF_ValidationModel/src/main/java/com/journaldev/jsf/bean/Mobile.java
             ((UIInput) component).setValid(false);
             FacesMessage message = new FacesMessage("You do not have permission to modify a Bug Report. Only Software Developers can.");
             context.addMessage(component.getClientId(context), message);

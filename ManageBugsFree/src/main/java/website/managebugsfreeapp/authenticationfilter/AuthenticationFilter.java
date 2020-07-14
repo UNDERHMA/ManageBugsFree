@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package website.managebugsfreeapp.authenticationfilter;
 
 import java.io.IOException;
@@ -25,10 +21,6 @@ import javax.servlet.http.HttpSession;
 @WebFilter("*.xhtml")
 public class AuthenticationFilter implements Filter {
 
-    
-    /* Code by Kasun Dharmadasa used as reference -
-    https://medium.com/@kasunpdh/session-management-in-java-using-servlet-filters-and-cookies-7c536b40448f
-    */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
@@ -46,8 +38,6 @@ public class AuthenticationFilter implements Filter {
                 userActive = true;          
             }
         }
-        
-       
         
         //redirecting based on userActive flag or if it is the callback
         if (userActive) {

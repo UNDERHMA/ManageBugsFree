@@ -1,25 +1,16 @@
 package website.managebugsfreeapp.entities;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
  * @author mason
  */
 
-// code for dates from https://blog.octo.com/en/audit-with-jpa-creation-and-update-date/
 @MappedSuperclass
 public abstract class LBTReportBaseEntity {
         
@@ -69,12 +60,16 @@ public abstract class LBTReportBaseEntity {
 
 	@PrePersist
 	void onCreate() {
-		this.setDateCreated(new Timestamp((new Date()).getTime()));
+            // MIT License for Mkyong.com in package folder
+            // Timestamp code for dates from https://mkyong.com/java/how-to-get-current-timestamps-in-java//
+		this.setDateCreated(new Timestamp(System.currentTimeMillis()));
 	}
 
 	@PreUpdate
 	void onPersistLastUpdated() {
-		this.setLastUpdated(new Timestamp((new Date()).getTime()));
+            // MIT License for Mkyong.com in package folder
+            // Timestamp code for dates from https://mkyong.com/java/how-to-get-current-timestamps-in-java//
+		this.setLastUpdated(new Timestamp(System.currentTimeMillis()));
 	}
         
 }

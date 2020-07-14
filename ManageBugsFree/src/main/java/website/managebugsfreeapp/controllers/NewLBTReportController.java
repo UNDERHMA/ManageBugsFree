@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package website.managebugsfreeapp.controllers;
 
 import com.auth0.jwt.JWT;
@@ -36,6 +32,8 @@ import javax.servlet.http.HttpSession;
  */
 @FacesConfig(
         // Activates CDI build-in beans
+        // CC BY-SA 4.0 License, available in package folder. Code snippet not changed in any way.
+        // Tadas B. https://stackoverflow.com/questions/45682309/changing-faces-config-xml-from-2-2-to-2-3-causes-javax-el-propertynotfoundexcept
         version = JSF_2_3
 )
 
@@ -170,10 +168,11 @@ public class NewLBTReportController {
             }
     }
     
-    // used Pankaj article for reference https://www.journaldev.com/7035/jsf-validation-example-tutorial-validator-tag-custom-validator
     public void validateSimilarBRId(FacesContext context, UIComponent component, Integer input) {
         if(input != null) {
             if(!lBTReportEJB.validateSimilarBRId(input)) {
+                // MIT License in package folder
+                // Pankaj Kumar https://github.com/journaldev/journaldev/blob/master/JSF/JSF_ValidationModel/src/main/java/com/journaldev/jsf/bean/Mobile.java
                 ((UIInput) component).setValid(false);
                 FacesMessage message = new FacesMessage("This BugReportId does not exists");
                 context.addMessage(component.getClientId(context), message);
@@ -181,10 +180,11 @@ public class NewLBTReportController {
         }
     }
     
-    // used Pankaj article for reference https://www.journaldev.com/7035/jsf-validation-example-tutorial-validator-tag-custom-validator
     public void validateLinkedBRId(FacesContext context, UIComponent component, Integer input) {
         if(input != null) {
             if(!lBTReportEJB.validateLinkedBRId(input)) {
+                // MIT License in package folder
+                // Pankaj Kumar https://github.com/journaldev/journaldev/blob/master/JSF/JSF_ValidationModel/src/main/java/com/journaldev/jsf/bean/Mobile.java
                 ((UIInput) component).setValid(false);
                 FacesMessage message = new FacesMessage("This BugReportId does not exists");
                 context.addMessage(component.getClientId(context), message);
@@ -192,7 +192,6 @@ public class NewLBTReportController {
         }
     }
     
-    // used Pankaj article for reference https://www.journaldev.com/7035/jsf-validation-example-tutorial-validator-tag-custom-validator
     public void validatePermissions(FacesContext context, UIComponent component, String input) {
         // Checking authorization token for permissions - return with faces message if invalid
         HttpSession session = (HttpSession) context.getExternalContext().getSession(false);
@@ -206,6 +205,8 @@ public class NewLBTReportController {
             }
         }
         if(!hasValidPermissions) {
+            // MIT License in package folder
+            // Pankaj Kumar https://github.com/journaldev/journaldev/blob/master/JSF/JSF_ValidationModel/src/main/java/com/journaldev/jsf/bean/Mobile.java
             ((UIInput) component).setValid(false);
             FacesMessage message = new FacesMessage("You do not have permission to add a New LBT Report. Only Customer Support Representatives do.");
             context.addMessage(component.getClientId(context), message);
